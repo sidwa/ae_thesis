@@ -1,0 +1,19 @@
+to run the baseline ppo algo but with our visual encoder some changes has to be
+changed on 
+ppo_pointnav.yaml:
+baseline_task_config_path change to pointnav.yaml in curr dir
+
+pointnav.yaml:
+add a section->
+
+DATASET:
+	DATA_PATH:/path/to/habitat-api/data/datasets/pointnav/habitat-test-scenes/v1/{split}/{split}.json.gz
+	SCENE_PATH:/path/to/habitat-api/data/scene_datasets
+
+add a section in ppo_pointnav.yaml
+
+net_args:
+	ae_hidden_size: 256 <this must have same value as hidden size selected for trained autoencoder>
+  	depth_hidden_size: 256 <this can be a value of your choosing>
+
+the above overrides the defaults set by habitat_baseline
