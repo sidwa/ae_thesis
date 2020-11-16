@@ -13,3 +13,5 @@ learning on computer vision tasks.
     intermediate results and loss values and computing loss values.
 4. ae_job_dispatcher.py : SLURM job dispatching program to help perform 
     distributed grid search autoencoder hyperparameters.
+
+Code cleanup remaining!
